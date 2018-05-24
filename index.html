@@ -52,7 +52,7 @@
                         </dl>
                 </div>
             </div>        
-            <footer>
+            <footer class="meider">
                     <ul>
                         <li><a href="1"><svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-weibo"></use>
@@ -70,26 +70,74 @@
             </footer>        
         </main>
             <div>            
-                <a href="###" download><button>下载PDF简历</button></a>
-                <p>我是一名前端学员,我正在学习前端。</br>
+                <p class="anniu"><a class="button" href="###" download>下载PDF简历</a></p>
+                <p class="jieshao">我是一名前端学员,我正在学习前端。</br>
                     技能：进化中</p>
                 <h2>技能</h2>
-                <ol>
-                    <li>HTML 5 & CSS 3</li>
-                    <li>javascript</li>
-                    <li>JQuery</li>
-                    <li>Vue</li>
-                    <li>React</li>
-                    <li>HTTP</li>
-                </ol>
-            <h2>作品集</h2>  
-                <ol> 
-                    <li>所有</li>
-                    <li>框架</li>
-                    <li>原生JSz&CSS</li>
-                </ol> 
+                <div class="jineng">
+                    <ol class="clearfix">
+
+                        <li>HTML 5 & CSS 3<div class="tiao">
+                                <div class="tiao1"></div>
+                            </div></li>
+                                                        
+                        <li>javascript<div class="tiao">
+                                <div class="tiao2"></div>
+                            </div>   </li>
+                        
+                        <li>JQuery<div class="tiao">
+                                <div class="tiao3"></div>
+                            </div>   </li>
+                        
+                        <li>Vue<div class="tiao">
+                                <div class="tiao4"></div>
+                            </div>   </li>
+                        
+                        <li>React<div class="tiao">
+                                <div class="tiao5"></div>
+                            </div>   </li>
+                        
+                        <li>HTTP  <div class="tiao">
+                                <div class="tiao6"></div>
+                            </div>   </li>
+                    
+                    </ol>
+                </div>
+                <h2>作品集</h2>
+                <div class="juzhong">
+                    <div class="zuoping"> 
+                        <ol class="clearfix"> 
+                            <li id="portfolio1">所有</li>
+                            <li id="portfolio2">框架</li>
+                            <li id="portfolio3">原生JSz&CSS</li>
+                        </ol> 
+                        <div class="bar state-1" id="portfolio4"> 
+                            <div class="bar-x"></div>
+                        </div>                      
+                        <script>
+                  portfolio1.onclick=function(){
+                    portfolio4.className='bar state-1'   
+                  }
+                  portfolio2.onclick=function(){
+                    portfolio4.className='bar state-2'   
+                  }
+                  portfolio3.onclick=function(){
+                    portfolio4.className='bar state-3'   
+                  } 
+                        </script> 
+                    </div>
+                </div> 
+                <div class="img-x">
+                    <div class="clearfix">
+                        <img src="./picqure/147.jpg" alt="tu1" style="float: left;">
+                        <div class="img-x1" style="float: right;">
+                            <img src="./picqure/258.jpg" alt="tu2"></br>
+                            <img src="./picqure/369.jpg" alt="tu3" class="x1">
+                        </div>
+                    </div>
+                </div>                  
             </div>
 
     </body>
-    <div class="yin-yang"></div>
+
 </html>
