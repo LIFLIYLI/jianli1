@@ -375,14 +375,15 @@ margin-top: 5px;
 }
 
 .img-x .clearfix{
-    max-width: 942px;
+    max-width: 918px;
     margin-left: auto;
     margin-right: auto;
     padding: 40px 0px;
-    margin: 0 130px;
+
 }
 
-.img-x .clearfix .img-x1 .x1{    
+.img-x .clearfix .img-x1 .x1{
+    
 margin-top: 16px;
 box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.38);
 }
