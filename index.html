@@ -6,24 +6,38 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>我的简历</title>
         <link rel="stylesheet" href="./css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     </head>
-    <script src="//at.alicdn.com/t/font_675316_ck2it96qkndk7qfr.js"></script>
-
-    </style>
+    <script src="//at.alicdn.com/t/font_675316_ck2it96qkndk7qfr.js"></script>   
     <body>
-        <div class="topNavBar">
+        <div class="kaishi active" id="kaishi"><div class="hh"></div></div>       
+        <div class="topNavBar" id="topNavBar">
             <a href="#" alt="rs" style="float:left">
                 <span class="rs" style="color:#E6686A">RS</span><span class="card" style="color:#9A9DA2">card</span>
             </a>        
             <nav>
                 <ul class="clearfix">
-                    <li><a href="#">其他</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">关于</a></li>
+                    <li><a href="#qt">其他</a></li>
+                    <li><a href="#lx">联系方式</a></li>
+                    <li><a href="#rl">日历</a></li>
+                    <li class="rrr">
+                        <a href="#bk">博客</a>
+                        <ul class="er">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li class="rrr">
+                        <a href="#zp">作品</a>
+                        <ul class="er">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li><a href="#jn" class="jn">技能</a></li>
+                    <li><a href="#gy">关于</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,12 +45,12 @@
             <div class="mask"></div>
                  
         </div>
-        <main class="zhuyao clearfix">
+        <main date-x class="zhuyao clearfix" id="gy" >
             <img class="touxiang" style="background-image: url(./picqure/123.jpg)"></br>
-            <div class="neirong">
+            <div  class="neirong" >
                 <span class="text">Hello</span>
                 <div class="sanjiao"></div>
-                <h1>李方玉</h1>
+                <p1>李方玉</p1>
                 <p>前端学习者</p>
                 <hr>
                 <div class="description-list">
@@ -73,10 +87,11 @@
                 <p class="anniu"><a class="button" href="###" download>下载PDF简历</a></p>
                 <p class="jieshao">我是一名前端学员,我正在学习前端。</br>
                     技能：进化中</p>
-                <h2>技能</h2>
-                <div class="jineng">
-                    <ol class="clearfix">
 
+                <section date-x  id="jn" class="jn">
+                    <h1>技能</h1>
+                <div  class="jineng">
+                    <ol class="clearfix">
                         <li>HTML 5 & CSS 3<div class="tiao">
                                 <div class="tiao1"></div>
                             </div></li>
@@ -103,41 +118,39 @@
                     
                     </ol>
                 </div>
-                <h2>作品集</h2>
-                <div class="juzhong">
-                    <div class="zuoping"> 
-                        <ol class="clearfix"> 
-                            <li id="portfolio1">所有</li>
-                            <li id="portfolio2">框架</li>
-                            <li id="portfolio3">原生JSz&CSS</li>
-                        </ol> 
-                        <div class="bar state-1" id="portfolio4"> 
-                            <div class="bar-x"></div>
-                        </div>                      
-                        <script>
-                  portfolio1.onclick=function(){
-                    portfolio4.className='bar state-1'   
-                  }
-                  portfolio2.onclick=function(){
-                    portfolio4.className='bar state-2'   
-                  }
-                  portfolio3.onclick=function(){
-                    portfolio4.className='bar state-3'   
-                  } 
-                        </script> 
-                    </div>
-                </div> 
-                <div class="img-x">
-                    <div class="clearfix">
-                        <img src="./picqure/147.jpg" alt="tu1" style="float: left;">
-                        <div class="img-x1" style="float: right;">
-                            <img src="./picqure/258.jpg" alt="tu2"></br>
-                            <img src="./picqure/369.jpg" alt="tu3" class="x1">
+                </section>
+                
+                <section date-x id="zp" class="zp">
+                        <h1>作品集</h1>
+                        <div class="juzhong">
+                            <div class="zuoping"> 
+                                <ol class="clearfix"> 
+                                    <li id="portfolio1">所有</li>
+                                    <li id="portfolio2">框架</li>
+                                    <li id="portfolio3">原生JSz&CSS</li>
+                                </ol> 
+                                <div class="bar state-1" id="portfolio4"> 
+                                    <div class="bar-x"></div>
+                                </div>                      
+                             
+                            </div>
+                        </div> 
+                        <div class="img-x">
+                            <div class="clearfix">
+                                <img src="./picqure/147.jpg" alt="tu1" style="float: left;">
+                                <div class="img-x1" style="float: right;">
+                                    <img src="./picqure/258.jpg" alt="tu2"></br>
+                                    <img src="./picqure/369.jpg" alt="tu3" class="x1">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>                  
+                </section>
+                  
             </div>
-
+            <script>
+               
+            </script> 
+        <script src="./js/main.js"></script>
     </body>
 
 </html>
