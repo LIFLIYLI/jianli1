@@ -1,6 +1,6 @@
 setTimeout(function(){
  kaishi.classList.remove('active')
-},000)
+},500)
 
 let specialTags = document.querySelectorAll('[date-x]')
 for(let i =0;i<specialTags.length; i++){

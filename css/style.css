@@ -143,7 +143,7 @@ animation:qq 1s;
 }
 [date-x] {
     transform:translateY(0px);
-    transition:all 0.5s;
+    transition:all 1s;
 }
 @keyframes come{
 0%{transform:translateY(300px)}
