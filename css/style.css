@@ -375,7 +375,7 @@ margin: 20px 0px 20px 50px;
 
     .jineng .clearfix>li:nth-child(even){
         float: right;
-        margin: 20px 50px 20px 0px;   
+        margin: 20px 50px 20px 0px； 
     }
 
     .jineng .clearfix>li .tiao{
