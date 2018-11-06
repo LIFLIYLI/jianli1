@@ -342,8 +342,8 @@ font-weight: bold;
     }
 
     h1{
-margin-top: 60px;
-margin-bottom: 30px;
+margin-top: 100px;
+margin-bottom: 40px;
 max-width: 942px;
         margin-left: auto;
         margin-right: auto;
@@ -487,4 +487,17 @@ transform: translateX(-100%)
 .swiper-button-next{
     left: 74%;
     right:  auto;
+}
+.messageList{
+
+    width: 600px;
+    margin-left: auto;
+    margin-right:auto;
+    list-style: none;
+    padding:20px 0;
+    background: rgb(223, 220, 220);
+}
+.messageList>li{
+    margin:15px 0;
+    border-bottom:1px solid rgb(206, 204, 204);
 }

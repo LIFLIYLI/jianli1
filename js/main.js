@@ -1,113 +1,80 @@
-//swiper 初始化
-var mySwiper = new Swiper ('.swiper-container', {
-// Optional parameters
-loop: true,
+!function(){
+        
+        //加载小圆圈
+    setTimeout(function(){
+        kaishi.classList.remove('active')
+    },500)
 
-// If we need pagination
-pagination: {
-el: '.swiper-pagination',
-},
-
-// Navigation arrows
-navigation: {
-nextEl: '.swiper-button-next',
-prevEl: '.swiper-button-prev',
-},
-
-})
-
-setTimeout(function(){
- kaishi.classList.remove('active')
-},500)
-
-let specialTags = document.querySelectorAll('[date-x]')
-for(let i =0;i<specialTags.length; i++){
-    specialTags[i].classList.add('animate')
-}
-
-    hanshu() 
-window.onscroll=function(){         //监听用户窗口滑动事件
-    if(window.scrollY>0){
-        topNavBar.classList.add('sticky')
-    }else
-   topNavBar.classList.remove('sticky')
-     hanshu()   
-}
-
-function hanshu(){
-    let specialTags=document.querySelectorAll('[date-x]')
-   let minIndex=0
-for(let i =1;i<specialTags.length; i++){
-    if(Math.abs(specialTags[i].offsetTop - window.scrollY) <Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-      minIndex = i     
+       //评论区数据库
+    var view=  document.querySelector('section.massage')
+    var model={
+        fetch:function(){
+            var query = new AV.Query('neirong');
+            return query.find()
+        },
+        save:function(name,content){
+            var neirong = AV.Object.extend('neirong');
+            var llll=new neirong()
+            return llll.save({
+                    'name':name, 
+                    'content':content
+                })
+        },
     }
-  }    
-    specialTags[minIndex].classList.remove('animate') 
-    let id = specialTags[minIndex].id
-    let a=document.querySelector('a[href="#'+id+'"]')
-    let li=a.parentNode
-    let brothersAndMe=li.parentNode.children
-    for(let i=0;i<brothersAndMe.length;i++){
-        brothersAndMe[i].classList.remove('highlight') 
-      
-    }
-    li.classList.add('highlight')
-}
-
-
-let liTags = document.getElementsByClassName('rrr')         //通过Class名字为rrr来获取所有的标签
-for(let i=0;i<liTags.length;i++){
-    liTags[i].onmouseenter=function(h){             //监听鼠标附上去的事件
-    h.currentTarget.classList.add('active')           //给目标新加一个class   
-    }               
-    liTags[i].onmouseleave=function(h){         //监听鼠标附出的事件
-    h.currentTarget.classList.remove('active')
-    }                
-}
-
-let aTags = document.querySelectorAll('nav>ul>li>a')   //通过路径获取标签
-for(let i=0;i<aTags.length;i++){                //遍历i
-    aTags[i].onclick=function(p){                  //监听目标标签点击事件
-        p.preventDefault()                      //阻止系统默认设置
-        let a=p.currentTarget           //让A等于点击目标的标签  <a>
-        let href=a.getAttribute('href')     //让href= 点击目标标签的href对应的id                
-        let element=document.querySelector(href)   //通过href获得id为（目标标签对应的id）的标签
-        let Top=element.offsetTop       //让TOP=新目标标签的Y距离（距离页面顶部的绝对距离）
-
-        let first=window.scrollY        
-        let two=Top-100
-        let t=Math.abs(two-first)*2
-        if (t>1500){
-             t=1500
+    var controller = {
+        view:null,
+        model:null,
+        messageList:null,
+        init:function(view){
+            this.view=view
+            this.model=model
+            this.messageList=view.querySelector('#messageList')
+            this.form=view.querySelector('form')
+            this.initAV()
+            this.loadMessages()
+            this.bindEvents()
+        },
+        initAV:function(){
+            var APP_ID = 'XHNb2aBz7oPiF6OMh45IpSpW-gzGzoHsz';
+            var APP_KEY = 'lGauc7q47glzITY6hF6tqt1w';
+            
+            AV.init({
+              appId: APP_ID,
+              appKey: APP_KEY
+            });
+        },
+                    //读取
+        loadMessages:function(){
+            model.fetch().then(
+                (todos)=> {
+                let array=todos.map((item)=>item.attributes)
+                    array.forEach((item)=>{
+                    let li = document.createElement('li')
+                    li.innerText =`${item.name}:${item.content}`
+                    this.messageList.appendChild(li)
+                    });
+                }
+            )
+        },
+        //存储       
+        bindEvents:function(){         
+            this.form.addEventListener('submit',(e)=>{
+                e.preventDefault()//阻止刷新页面
+                this.xl() 
+            })           
+        },
+        xl:function(){
+                let myForm=this.form
+                let content=myForm.querySelector('input[name=content]').value
+                let name=myForm.querySelector('input[name=name]').value
+                model.save(name,content).then(function(object){
+                    let li = document.createElement('li')
+                    li.innerText =`${object.attributes.name}:${object.attributes.content}`
+                    let messageList = document.querySelector('#messageList')
+                    messageList.appendChild(li)
+                    myForm.querySelector('input[name=content]').value=''
+                })
         }
-         //平滑跳转代码：
-            function animate(time) {
-                requestAnimationFrame(animate);
-                TWEEN.update(time);
-            }
-            requestAnimationFrame(animate);
-            var coords = {  y: first }; 
-            var tween = new TWEEN.Tween(coords) 
-                    .to({y: two}, t)
-                    .easing(TWEEN.Easing.Cubic.InOut) 
-                    .onUpdate(function() { 
-                    window.scrollTo(0,coords.y)            
-                    })
-                    .start();
-        }
-}
-
-//动画条上面引用
-
-
-portfolio1.onclick=function(){
-    portfolio4.className='bar state-1'   
-  }
-  portfolio2.onclick=function(){
-    portfolio4.className='bar state-2'   
-  }
-  portfolio3.onclick=function(){
-    portfolio4.className='bar state-3'   
-  } 
-          
-
+    } 
+controller.init(view,model)
+}.call()
