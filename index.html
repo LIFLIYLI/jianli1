@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>我的简历</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
         <link rel="stylesheet" href="./css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>        
     </head>
     <script src="//at.alicdn.com/t/font_675316_ck2it96qkndk7qfr.js"></script>   
+   
     <body>
         <div class="kaishi active" id="kaishi"><div class="hh"></div></div>       
         <div class="topNavBar" id="topNavBar">
@@ -122,34 +125,23 @@
                 
                 <section date-x id="zp" class="zp">
                         <h1>作品集</h1>
-                        <div class="juzhong">
-                            <div class="zuoping"> 
-                                <ol class="clearfix"> 
-                                    <li id="portfolio1">所有</li>
-                                    <li id="portfolio2">框架</li>
-                                    <li id="portfolio3">原生JSz&CSS</li>
-                                </ol> 
-                                <div class="bar state-1" id="portfolio4"> 
-                                    <div class="bar-x"></div>
-                                </div>                      
-                             
-                            </div>
-                        </div> 
-                        <div class="img-x">
-                            <div class="clearfix">
-                                <img src="./picqure/147.jpg" alt="tu1" style="float: left;">
-                                <div class="img-x1" style="float: right;">
-                                    <img src="./picqure/258.jpg" alt="tu2"></br>
-                                    <img src="./picqure/369.jpg" alt="tu3" class="x1">
+                        <div class="swiper-container">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <img src="./picqure/11_副本.jpg" class="swiper-slide">
+                                    <img src="./picqure/AA_副本.jpg" class="swiper-slide">
+                                    <img src="./picqure/11_副本.jpg" class="swiper-slide">
                                 </div>
-                            </div>
-                        </div>
-                </section>
-                  
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+                            
+                                <!-- If we need navigation buttons -->                            
+                           </div> 
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                </section>             
             </div>
-            <script>
-               
-            </script> 
         <script src="./js/main.js"></script>
     </body>
 

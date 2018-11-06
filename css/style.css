@@ -470,53 +470,21 @@ transform: translateX(-100%)
      .zuoping>ol>li:nth-child(3){
         margin-right: 0px;
     }
-
-.bar{
-    height: 6px;
-    border-radius: 4px;
-    background: white;
-     }
-  
-.bar.state-1 .bar-x{
-    border-radius: 4px;
-    margin-left: 0px;
-    height: 100%;
-    background: #E8676B;
-    width: 50px;
-    transition: all 0.5s;
+    .swiper-container {
+        width: 800px;
+        height: 600px;
+        overflow: hidden;
+} 
+.swiper-button-prev,
+.swiper-button-next{
+    background-color:white;
+    width: 64px;
+    height: 64px;
+    right: 74%;
+    left:  auto;
+    border-radius:50%;
 }
-
-.bar.state-2 .bar-x{
-    border-radius: 4px;
-    margin-left: 80px;
-    height: 100%;
-    background: #E8676B;
-    width: 90px;
-    transition: all 0.5s;
-}
-
-.bar.state-3 .bar-x{
-    border-radius: 4px;
-    margin-left: 210px;
-    height: 100%;
-    background: #E8676B;
-    width:112px;
-    transition: all 0.5s;
-}
-
-.img-x .clearfix{
-    max-width: 918px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px 0px;
-
-}
-
-.img-x .clearfix .img-x1 .x1{
-    
-margin-top: 16px;
-box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.38);
-}
-.img-x .clearfix>img{
-    box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.38);
+.swiper-button-next{
+    left: 74%;
+    right:  auto;
 }
