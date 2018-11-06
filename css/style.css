@@ -489,15 +489,15 @@ transform: translateX(-100%)
     right:  auto;
 }
 .messageList{
-
-    width: 600px;
+    width: 800px;
     margin-left: auto;
     margin-right:auto;
     list-style: none;
     padding:20px 0;
     background: rgb(223, 220, 220);
+    border:1px solid rgb(156, 132, 132);
 }
 .messageList>li{
-    margin:15px 0;
+    margin:15px 40px;
     border-bottom:1px solid rgb(206, 204, 204);
 }
